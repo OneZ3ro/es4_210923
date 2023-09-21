@@ -1,11 +1,13 @@
 import { Card, Button, Col } from "react-bootstrap";
 import { ResultNotzAndBlogs } from "../interfaces/ResultsNotzAndBlogs";
+import { useNavigate } from "react-router-dom";
 
 interface MyBlogProps {
   myBlog: ResultNotzAndBlogs;
 }
 
 const MyBlog = ({ myBlog }: MyBlogProps) => {
+  const navigate = useNavigate();
   console.log(myBlog);
   return (
     <Col xs={6} md={4} xl={3}>
@@ -22,7 +24,12 @@ const MyBlog = ({ myBlog }: MyBlogProps) => {
         <Card.Body>
           <Card.Title>{myBlog.title}</Card.Title>
           <Card.Text>{myBlog.summary}</Card.Text>
-          <Button variant="primary">Learn more</Button>
+          <Button
+            variant="primary"
+            onClick={() => navigate(`/blog/${myBlog.id}`)}
+          >
+            Learn more
+          </Button>
         </Card.Body>
       </Card>
     </Col>

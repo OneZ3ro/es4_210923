@@ -5,6 +5,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyMain from "./components/MyMain";
 import NotzDetail from "./components/NotzDetail";
+import BlogDetail from "./components/BlogDetail";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MyMain />} />
           <Route path="/notz/:id" element={<NotzDetail />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
         </Routes>
       </Container>
     </BrowserRouter>
